@@ -48,4 +48,3 @@ app/src/main/java/com/example/daymark/
 
 Daymark is available under the MIT License. See [LICENSE](LICENSE).
 
-warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
