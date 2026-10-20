@@ -1,48 +1,51 @@
 # Daymark
 
-Daymark is a calm, offline-first todo app for Android. It is built with Kotlin and Jetpack Compose, with tasks stored locally in Room.
+Daymark is a small Android to-do app built with Kotlin and Jetpack Compose. You can add a task, include a note, choose its priority, and set a due date. Tasks stay on the device, so the app works without an account.
 
-## Features
+## What it does
 
-- Create tasks with an optional note, due date, and priority
-- Mark tasks complete and remove tasks
-- Filter by all, today, upcoming, or completed
-- See a live completion summary
-- Keep your list across app restarts with a local Room database
-- Material 3 interface with coordinated system bars
+- Add, complete, and delete tasks
+- Add an optional note, due date, and low, medium, or high priority
+- Filter the list by all tasks, today, upcoming, or completed
+- See how many tasks are left and how many are done
+- Clear completed tasks when you want a fresh list
 
-## Tech stack
+Task data is stored locally with Room. The interface is built with Compose and Material 3, and the screen observes task updates through a `Flow`.
 
-- Kotlin
-- Jetpack Compose and Material 3
-- MVVM with AndroidX ViewModel and lifecycle-aware state collection
-- Room, coroutines, and Flow
-- Gradle Kotlin DSL
+## Built with
 
-## Run locally
+Kotlin · Jetpack Compose · Material 3 · Room · Coroutines and Flow · AndroidX ViewModel
 
-1. Install JDK 17, Android Studio, and Android SDK Platform 36.
-2. Install Gradle 8.13 and run `gradle :app:assembleDebug` from this directory, or generate the wrapper first with `gradle wrapper --gradle-version 8.13`.
-3. Open the `Daymark` folder in Android Studio, let Gradle sync, then run the `app` configuration on an emulator or Android device (Android 8.0 / API 26 or newer).
+## Run the app
 
-The project uses Android Gradle Plugin 8.13.2. If you generate the wrapper, commit the generated `gradlew`, `gradlew.bat`, and `gradle/wrapper/gradle-wrapper.jar` files so GitHub contributors can build with `./gradlew :app:assembleDebug`.
+The project targets Android SDK 36, supports Android 8.0 (API 26) and newer, and uses JDK 17 and Gradle 8.13.
 
-## Project structure
+The Gradle wrapper scripts are not included yet. If Gradle 8.13 is installed, run this from the project folder:
+
+```shell
+gradle :app:assembleDebug
+```
+
+To add the wrapper for future builds, run:
+
+```shell
+gradle wrapper --gradle-version 8.13
+```
+
+Then open the project in Android Studio, let Gradle sync, and run the `app` configuration on an emulator or connected device.
+
+## Project layout
 
 ```text
 app/src/main/java/com/example/daymark/
-├── data/                 # Room entity, DAO, database, repository
-├── ui/                   # Compose screens and theme
-├── MainActivity.kt       # Activity entry point
-└── TaskViewModel.kt      # UI state and task actions
+├── data/       Room database, task model, DAO, and repository
+├── ui/         Compose screen and theme
+├── MainActivity.kt
+└── TaskViewModel.kt
 ```
-
-## Notes
-
-Daymark stores task data on-device and does not require an account or network access. The application ID is `dev.daymark.todo`; change it before publishing your own Play Store app.
 
 ## License
 
-This project is available under the MIT License. See [LICENSE](LICENSE).
+Daymark is available under the MIT License. See [LICENSE](LICENSE).
 
-
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
